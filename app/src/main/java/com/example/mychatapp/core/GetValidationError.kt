@@ -4,10 +4,10 @@ fun getValidationError(email: String,
     password: String,
     ): String? {
     return when {
-        email.isBlank() && password.isBlank() -> "Email and password cannot be empty"
-        email.isBlank() -> "Please enter your email"
-        password.isBlank() -> "Please enter your password"
-        password.length < 6 -> "Password must be at least 6 Character"
+        email.isBlank() && password.isBlank() -> "Email yoki password to`ldirilmagan"
+        email.isBlank() -> "Iltimos email kiriting"
+        password.isBlank() -> "Iltimos password kiriting"
+        password.length < 6 -> "Password kamida 6 ta belgidan iborat bolishi kerak"
         else -> null
     }
 }

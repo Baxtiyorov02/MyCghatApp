@@ -20,32 +20,33 @@ import com.example.mychatapp.presentation.chat.ChatViewModel
 import com.example.mychatapp.presentation.home.HomeViewModel
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
+import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 
 val  appModule= module {
 
-    singleOf(::AuthRepositoryImpl){
+    singleOf(::AuthRepositoryImpl) {
         bind<AuthRepository>()
     }
-    singleOf(:: UserRepositoryImpl){
+    singleOf(::UserRepositoryImpl) {
         bind<UserRepository>()
     }
-    singleOf(:: ChatRepositoryImpl){
+    singleOf(::ChatRepositoryImpl) {
         bind<ChatRepository>()
     }
-    singleOf(:: IsUserLoggedInUseCase )
+    singleOf(::IsUserLoggedInUseCase)
 
-    singleOf(:: SignInUseCase)
-    singleOf(:: SignUpUseCase)
-    singleOf(:: SignOutUseCase)
-    singleOf(:: GetLoggedInUserUseCase)
-    singleOf(:: SetDisplayNameUseCase)
-    singleOf(:: SendMessageUseCase)
-    singleOf(:: ListenToMessageUseCase)
-    singleOf(:: GetAllUsersUseCase)
-    singleOf(:: AuthViewModel)
+    singleOf(::SignUpUseCase)
+    singleOf(::SetDisplayNameUseCase)
+    singleOf(::SignInUseCase)
+    singleOf(::GetLoggedInUserUseCase)
+    singleOf(::SignOutUseCase)
+    singleOf(::SendMessageUseCase)
+    singleOf(::ListenToMessageUseCase)
+    singleOf(::GetAllUsersUseCase)
+    viewModelOf(::AuthViewModel)
 
-    singleOf(::HomeViewModel)
-    singleOf(:: ChatViewModel)
+    viewModelOf(::HomeViewModel)
+    viewModelOf(::ChatViewModel)
 
 }

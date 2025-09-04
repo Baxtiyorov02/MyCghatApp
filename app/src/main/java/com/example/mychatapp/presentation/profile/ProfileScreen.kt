@@ -51,7 +51,7 @@ fun ProfileScreen(
             TopAppBar(
                 title = {
                     TextView(
-                        value = "BaatCheet",
+                        value = "ChatApp",
                         fonSize = 22,
                         color = Color.White
                     )

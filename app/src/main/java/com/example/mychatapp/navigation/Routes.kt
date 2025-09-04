@@ -1,9 +1,7 @@
 package com.example.mychatapp.navigation
-
 import kotlinx.serialization.Serializable
 
 sealed class Routes {
-
 
     @Serializable
     data object HomeScreen : Routes()
@@ -15,10 +13,8 @@ sealed class Routes {
     data object ProfileScreen : Routes()
 
     @Serializable
-    data class ChatScreen(val name: String,val id: String) : Routes()
+    data class ChatScreen(val name: String, val id: String) : Routes()
 
     @Serializable
     data object MainScreen : Routes()
-
-
 }

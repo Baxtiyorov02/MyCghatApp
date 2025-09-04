@@ -5,9 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.example.mychatapp.navigation.AppNavigation
-import com.example.mychatapp.presentation.auth.AuthScreen
-import com.example.mychatapp.presentation.auth.components.AuthTextField
-import com.example.mychatapp.ui.theme.MyChatAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

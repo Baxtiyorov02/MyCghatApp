@@ -46,7 +46,7 @@ fun HomeScreen(
             TopAppBar(
                 title = {
                     TextView(
-                        value = "BaatCheet", fonSize = 22, color = Color.White
+                        value = "ChatApp", fonSize = 22, color = Color.White
                     )
                 }, actions = {
                     Image(
