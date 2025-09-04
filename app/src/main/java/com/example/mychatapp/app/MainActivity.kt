@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.example.mychatapp.navigation.AppNavigation
 import com.example.mychatapp.ui.theme.MyChatAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -11,9 +12,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MyChatAppTheme {
-
-            }
+            AppNavigation()
         }
     }
 }
