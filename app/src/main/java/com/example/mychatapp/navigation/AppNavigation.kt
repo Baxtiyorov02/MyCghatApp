@@ -13,9 +13,7 @@ import com.example.mychatapp.presentation.main.MainScreen
 @Composable
 fun AppNavigation() {
 
-
     val navController = rememberNavController()
-
     NavHost(
         navController = navController,
         startDestination = Routes.AuthScreen
@@ -27,7 +25,7 @@ fun AppNavigation() {
                 }
             )
         }
-       composable<Routes.MainScreen> {
+        composable<Routes.MainScreen> {
             MainScreen(
                 popBackStack = {
                     navController.popBackStack()

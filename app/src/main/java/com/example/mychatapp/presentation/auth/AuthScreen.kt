@@ -36,13 +36,14 @@ import com.example.mychatapp.core.LoadingBox
 import com.example.mychatapp.core.VerticalSpace
 import com.example.mychatapp.core.getValidationError
 import com.example.mychatapp.data.network.NetworkResponse
+import com.example.mychatapp.navigation.Routes
 import com.example.mychatapp.presentation.auth.components.AuthTextField
 import com.example.mychatapp.presentation.auth.events.AuthEvent
 import com.example.mychatapp.presentation.auth.events.AuthType
 import com.example.mychatapp.ui.theme.BgColor
 import com.example.mychatapp.ui.theme.MainColor
+import kotlinx.serialization.Serializable
 import org.koin.androidx.compose.koinViewModel
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AuthScreen(

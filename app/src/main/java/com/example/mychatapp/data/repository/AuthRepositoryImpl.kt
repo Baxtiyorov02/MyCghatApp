@@ -10,43 +10,35 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
-
 class AuthRepositoryImpl : AuthRepository {
 
     private val auth = FirebaseAuth.getInstance()
-
-    private val firestore= FirebaseFirestore.getInstance()
-
+    private val firestore = FirebaseFirestore.getInstance()
     override suspend fun signUp(
         email: String,
-        password: String
+        password: String,
     ): NetworkResponse<FirebaseUser> {
-
         return try {
             withContext(Dispatchers.IO) {
                 val result = auth.createUserWithEmailAndPassword(email, password).await()
                 NetworkResponse.Success(result.user!!)
             }
-
         } catch (e: Exception) {
-            NetworkResponse.Failure(error = e.localizedMessage ?: " An unexpected error occurred")
-
+            NetworkResponse.Failure(e.localizedMessage ?: "An unexpected error occurred")
         }
     }
 
     override suspend fun signIn(
         email: String,
-        password: String
+        password: String,
     ): NetworkResponse<FirebaseUser> {
-
         return try {
-
             withContext(Dispatchers.IO) {
                 val result = auth.signInWithEmailAndPassword(email, password).await()
                 NetworkResponse.Success(result.user!!)
             }
         } catch (e: Exception) {
-            NetworkResponse.Failure(e.localizedMessage ?: " An unexpected error occurred")
+            NetworkResponse.Failure(e.localizedMessage ?: "An unexpected error occurred")
         }
     }
 
@@ -54,9 +46,8 @@ class AuthRepositoryImpl : AuthRepository {
         uid: String,
         name: String,
         password: String,
-        email: String
+        email: String,
     ): NetworkResponse<Boolean> {
-
         return try {
             val model = UserModel(
                 name = name,
@@ -68,13 +59,10 @@ class AuthRepositoryImpl : AuthRepository {
                 .document(uid)
                 .set(model)
                 .await()
-
             NetworkResponse.Success(true)
-
         } catch (e: Exception) {
             NetworkResponse.Failure(e.localizedMessage ?: "")
         }
-
     }
 
     override suspend fun setDisplayName(name: String): NetworkResponse<Boolean> {
@@ -98,14 +86,11 @@ class AuthRepositoryImpl : AuthRepository {
         }
     }
 
-
-
     override fun signOut() {
         auth.signOut()
     }
 
-
     override fun isUserLoggedIn(): Boolean {
-        return  auth.currentUser!= null
+        return auth.currentUser != null
     }
 }

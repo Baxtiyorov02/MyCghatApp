@@ -27,15 +27,12 @@ val  appModule= module {
     singleOf(::AuthRepositoryImpl){
         bind<AuthRepository>()
     }
-
     singleOf(:: UserRepositoryImpl){
         bind<UserRepository>()
     }
-
     singleOf(:: ChatRepositoryImpl){
         bind<ChatRepository>()
     }
-
     singleOf(:: IsUserLoggedInUseCase )
 
     singleOf(:: SignInUseCase)
