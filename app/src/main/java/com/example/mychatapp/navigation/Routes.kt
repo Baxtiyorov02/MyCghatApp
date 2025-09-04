@@ -15,7 +15,7 @@ sealed class Routes {
     data object ProfileScreen : Routes()
 
     @Serializable
-    data class ChatScreen(val name: String,val chatId: String) : Routes()
+    data class ChatScreen(val name: String,val id: String) : Routes()
 
     @Serializable
     data object MainScreen : Routes()

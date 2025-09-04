@@ -1,0 +1,29 @@
+package com.example.mychatapp.core
+
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import com.example.mychatapp.presentation.home.HomeScreen
+import com.example.mychatapp.presentation.profile.ProfileScreen
+
+@Composable
+fun BottomNavHost(
+    modifier: Modifier = Modifier,
+    selectedItems: Int,
+    popBackStack: () -> Unit,
+    navToChat:(String, String)-> Unit
+) {
+    when (selectedItems) {
+        0 -> HomeScreen(
+            popBackStack = {
+                popBackStack.invoke()
+            },
+            modifier = modifier,
+            navToChat = {name,id->
+                navToChat.invoke(name,id)
+            },
+
+        )
+
+        1 -> ProfileScreen()
+    }
+}
